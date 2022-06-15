@@ -53,8 +53,7 @@
 
   .card {
     background-color: rgba(255, 255, 255, 0.871);
-    background-image: url(../images/pattern2.jpg) rgba(33, 115, 182, 0.205)
-    ;
+    background-image: url(../images/pattern2.jpg) rgba(33, 115, 182, 0.205);
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 20px;
@@ -62,7 +61,12 @@
     height: 304px;
     border-radius: 16px;
     overflow: hidden;
-            box-shadow: 10px 10px 10px rgba(9, 86, 149, 0.205);
+    box-shadow: 10px 10px 10px rgba(9, 86, 149, 0.205);
+    opacity: 1;
+    
+    /*animation-duration: 5s;
+    animation-name: compleja;
+    animation-delay: 2s;*/
   }
 
   .card-header {
@@ -133,4 +137,13 @@
   .card-footer-social p {
     letter-spacing: 1px;
   }
-  /*# sourceMappingURL=estilos.css.map */
+  @keyframes compleja {
+    0% {
+      opacity: 0;
+    } 
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
