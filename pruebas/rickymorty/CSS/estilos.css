@@ -1,32 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Fredericka+the+Great&display=swap');
-  :root {
-    --dark-cyan: hsl(185, 75%, 39%);
-    --very-dark-desaturated: hsl(229, 23%, 23%);
-    --dark-grayish-blue: hsl(227, 10%, 46%);
-    --dark-gray: hsl(0, 0%, 0%);
-  }
+:root {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --very-dark-desaturated: hsl(229, 23%, 23%);
+  --dark-grayish-blue: hsl(227, 10%, 46%);
+  --dark-gray: hsl(0, 0%, 0%);
+}
 
-  html {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    font-size: 62.5%;
-  }
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+}
 
-  body { 
-    font-family: 'Kumbh Sans', sans-serif;
-    background-image: url(../images/pattern3.jpg);
-    background-position: center;
-    background-size: contain;
-  }
+body { 
+  font-family: 'Kumbh Sans', sans-serif;
+  background-image: url(../images/pattern3.jpg);
+  background-position: center;
+  background-size: contain;
+}
 
-  header {
-    text-align: center;
-  }
+header {
+  text-align: center;
+}
 
-  header img {
-    width: 250px;
-    text-align: center;
-  }
+header img {
+  width: 250px;
+  text-align: center;
+ }
 
   .flex {
     display: flex;
@@ -101,6 +101,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-direction: column;
     -ms-flex-pack: distribute;
     justify-content: space-around;
   }
@@ -116,9 +117,11 @@
   }
 
 .cardFront,.cardBack{
+  height: 304px;
+
 }
 
-.card:hover{
+.card:hover {
     transform: rotateY(180deg);
     backface-visibility: hidden;
 }
