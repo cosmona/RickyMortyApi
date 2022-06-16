@@ -12,18 +12,11 @@
     font-size: 62.5%;
   }
 
-  *, *:before, *:after {
-    -webkit-box-sizing: inherit;
-            box-sizing: inherit;
-  }
-
-  body {
-    
+  body { 
     font-family: 'Kumbh Sans', sans-serif;
     background-image: url(../images/pattern3.jpg);
     background-position: center;
     background-size: contain;
-    
   }
 
   header {
@@ -36,37 +29,22 @@
   }
 
   .flex {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     gap: 10px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 100vh;
+    justify-content: center;
+    align-items: center;  
   }
 
   .card {
     background-color: rgba(255, 255, 255, 0.871);
-    background-image: url(../images/pattern2.jpg) rgba(33, 115, 182, 0.205);
-    background-size: cover;
-    background-repeat: no-repeat;
     margin-top: 20px;
     width: 180px;
     height: 304px;
     border-radius: 16px;
-    overflow: hidden;
     box-shadow: 10px 10px 10px rgba(9, 86, 149, 0.205);
-    opacity: 1;
-    
-    /*animation-duration: 5s;
-    animation-name: compleja;
-    animation-delay: 2s;*/
+    transform-style: preserve-3d;
+    transition: .5s ease;
   }
 
   .card-header {
@@ -79,9 +57,8 @@
     font-weight: 400;
     font-family: 'Fredericka the Great', cursive;
   }
+
   .card-body {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -94,9 +71,8 @@
   }
 
   .card-body-img {
-    border: 5px solid white;
+    border: 2px solid white;
     border-radius: 100%;
-    background-color: white;
     width: 100px;
     margin-top: 1rem;
   }
@@ -125,7 +101,7 @@
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
   }
 
   .card-footer-social {
@@ -137,13 +113,23 @@
   .card-footer-social p {
     letter-spacing: 1px;
   }
-  @keyframes compleja {
-    0% {
-      opacity: 0;
-    } 
-  
-    100% {
-      opacity: 1;
-    }
-  }
-  
+
+.cardFront,.cardBack{
+}
+
+.card:hover{
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.cardBack{
+  position: absolute;
+  top: 0px;
+  transform: rotateY(180deg);
+  height: 304px;
+  backface-visibility: hidden;
+  background-color: white;
+  width: 180px;
+  border-radius: 16px;
+    box-shadow: 10px 10px 10px rgba(9, 86, 149, 0.205);
+}  
