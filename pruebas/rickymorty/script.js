@@ -54,7 +54,7 @@ function pintaTarjeta(res,index){
 					</div>
 				</div>
 				<div class="cardBack">
-				<img src="./images/Google-Maps.png" alt="">${res[index].url}</img>
+				${res[index].url}
 				</div>
 			</article>`	
 }
@@ -73,7 +73,7 @@ getRick(URL_RICK,1).then((res) =>{																//* Cuando recibe la promesa r
 });	
 
 window.addEventListener('scroll', () => {														//* Cuando baja el scroll	
-    if (window.scrollY >= (document.documentElement.scrollHeight - window.innerHeight)-100) {
+    if (window.scrollY >= (document.documentElement.scrollHeight - window.innerHeight)-200) {
 		paginaCargada++
 		getRick(URL_RICK,paginaCargada).then((res) =>{
 			let titulo = document.querySelector(".flex");	
