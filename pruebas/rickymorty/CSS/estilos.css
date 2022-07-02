@@ -6,17 +6,24 @@
   --dark-gray: hsl(0, 0%, 0%);
 }
 
+*{
+  margin: 0;
+  padding: 0;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 62.5%;
 }
 
 body { 
+  width: 100vw;
+  height: 100vh;
   font-family: 'Kumbh Sans', sans-serif;
-  background-image: url(../images/pattern3.jpg);
+  background-color: black;
+/*   background-image: url(../images/pattern3.jpg);
   background-position: center;
-  background-size: contain;
+  background-size: contain; */
 }
 
 header {
@@ -28,112 +35,97 @@ header img {
   text-align: center;
  }
 
-  .flex {
-    display: flex;
-    flex-wrap: wrap;
-    height: 100vh;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;  
-  }
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: center;
+}
 
-  .card {
-    background-color: rgba(255, 255, 255, 0.871);
-    margin-top: 20px;
-    width: 180px;
-    height: 304px;
-    border-radius: 16px;
-    box-shadow: 10px 10px 10px rgba(9, 86, 149, 0.205);
-    transform-style: preserve-3d;
-    transition: .5s ease;
-  }
+.card {
+  background: #c9949f;
+  display: flex;
+  width: 300px;
+  height: 200px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  transition: all 0.5s;
+  border-radius: 15px;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+  flex-direction: column;
+}
+.imagenTitulo{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+}
 
-  .card-header {
-    width: 100%;
-    display: block;
-  }
+.Abre .imagenTitulo{
+  flex-direction: row;
+}
 
-  h1{
-    text-align: center;
-    font-weight: 400;
-    font-family: 'Fredericka the Great', cursive;
-  }
+.card-body {
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
 
-  .card-body {
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    border-bottom: 1px solid rgba(153, 153, 153, 0.425);
-  }
+  align-items: center;
+  border-bottom: 1px solid rgba(153, 153, 153, 0.425);
+}
 
-  .card-body-img {
-    border: 2px solid white;
-    border-radius: 100%;
-    width: 100px;
-    margin-top: 1rem;
-  }
-
-  .card-body-title {
-    margin-top: 2rem;
-    font-size: 1.8rem;
-  }
-
-  .card-body-title span {
-    color: var(--dark-gray);
-    font-weight: 400;
-  }
-
-  .card-body-text {
-    font-family: 'Dancing Script', cursive;
-    font-weight: 200;
-    color: var(--dark-gray);
-    font-size: 1.6rem;
-    margin-bottom: 2rem;
-    margin-top: 0px;
-  }
-
-  .card-footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-direction: column;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-  }
-
-  .card-footer-social {
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .card-footer-social p {
-    letter-spacing: 1px;
-  }
-
-.cardFront,.cardBack{
-  height: 304px;
+.card-body-img {
+  border: 2px solid white;
+  border-radius: 100%;
+  width: 100px;
+  margin: 1rem;
+  z-index: 10;
 
 }
 
-.card:hover {
-    transform: rotateY(180deg);
-    backface-visibility: hidden;
+h1{
+  text-align: center;
+  font-weight: 400;
+  font-family: 'Fredericka the Great', cursive;
+  z-index: 10;
+
 }
 
-.cardBack{
-  position: absolute;
-  top: 0px;
-  transform: rotateY(180deg);
-  height: 304px;
-  backface-visibility: hidden;
-  background-color: white;
-  width: 180px;
-  border-radius: 16px;
-    box-shadow: 10px 10px 10px rgba(9, 86, 149, 0.205);
-}  
+.Abre{
+  width: 100vw;
+  height: 85vh;
+  z-index: 200;
+  background: #48b8bbf5;
+  animation: aCero 1s ease-in 1s  both running ; 
+  z-index: 12;
+  border-radius: 0%;
+
+ }
+
+.Abre img {
+  width:236px;
+}
+
+.card-footer{
+  display: flex;
+  gap: 10px;
+  justify-content: space-evenly;
+  align-items: baseline;
+
+}
+
+.oculta{
+
+}
+
+@keyframes aCero {
+  0%{}
+  100%{
+    top:0px;
+    left:0px;
+  }
+}
