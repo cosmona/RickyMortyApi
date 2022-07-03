@@ -21,29 +21,43 @@ async function getRick(urlApi,page){
 //& devuelve una tarjeta rellena con los datos
 function pintaTarjeta(res,index){
 	console.log('res', res)
-	
+	let episodios;
+	let pizarra = `<article class="card" id="card${res[index].id}"> 
+						<section class="imagenTitulo">
+							<img src="${res[index].image}" alt="" class="card-body-img">
+							<h1 class="card-body-title">${res[index].name}</h1>
+						</section>			
+						<section class="datosTarjeta">
+							<div class="card-footer">
+								<h3>Specie</h3>
+								<p>${res[index].species}</p>
+								
+								<h3>Origin</h3>
+								<p>${res[index].origin.name}</p>
+								
+								<h3>Status</h3>
+								<p>${res[index].status}</p>
+								
+								<h3>Gender</h3>
+								<p>${res[index].gender}</p>
+							</div>	
+							<section class="episodesCard">
+							<h3>Episodes</h3>
+							<div class="episodes">
+								`;
+
+	episodios = res[index].episode.map((e)=> e);	
+	episodios.forEach((e)=>{
+		pizarra += `<p>${e}</p>`;
+	});
+
+	pizarra += `</div>	
+	</section>			
+	</section>			
+	</article>`;				
+					
 	//* pinta una tarjeta del array res en la posicion index
-	return `<article class="card" id="card${res[index].id}"> 
-				<section class="imagenTitulo">
-					<img src="${res[index].image}" alt="" class="card-body-img">
-					<h1 class="card-body-title">${res[index].name}</h1>
-				</section>			
-				<section class="datosTarjeta">
-					<div class="card-footer">
-						<p>Specie</p>
-						<h3>${res[index].species}</h3>
-						
-						<p>Origin</p>
-						<h3>${res[index].origin.name}</h3>
-						
-						<p>Status</p>
-						<h3>${res[index].status}</h3>
-						
-						<p>Gender</p>
-						<h3>${res[index].gender}</h3>
-					</div>	
-				</section>			
-			</article>`	;
+	return pizarra;
 };
 
 //& funcion principal, la que pincha y corta
@@ -57,19 +71,20 @@ async function main(){
 	let paginaCargada = 1;
 	let res = await getRick(URL_RICK,1)
 	let scrollY;
-
+	
 	//^ Handle funcion cuando se hace click en una tarjeta
 	let handleFuction = function () {
+		let pescador = document.querySelector(`.datosTarjeta`);
 		
 		//* Si ya esta abierto lo cierra
 		if (this.classList.contains('Abre')) {
 			this.removeAttribute( 'style');
 			this.classList.remove('Abre');
-			
+			pescador.classList.remove("aparece")
 			//* hace scroll automatico hacia donde estaba la tarjeta
 			window.scrollTo({top: scrollY, behavior: 'smooth'});
 		} else { //* se quiere abrir 
-
+			
 			//* posicion actual del scroll
 			scrollY = window.scrollY;
 
@@ -89,14 +104,16 @@ async function main(){
 			this.style.left = `${startLeft}px`;
 			this.style.top = `${startTop}px`;
 
-			/* //* pescando .imagenTitulo de la tarjeta clickada
-			let pescador = document.querySelector(`#${this.id} .imagenTitulo`);
-			console.log('pescador', pescador) */
-
+			
 			//* sube el scroll arriba con la tarjeta abierta
 			setTimeout(() => {
 				window.scrollTo({top: 0, behavior: 'smooth'});
 			}, 1100);	
+			setTimeout(() => {
+				//* pescando .imagenTitulo de la tarjeta clickada
+				let pescador2 = document.querySelector(`.Abre .datosTarjeta`);
+			   	pescador2.classList.add("aparece");
+			}, 2000);
 		};
 	};
 
