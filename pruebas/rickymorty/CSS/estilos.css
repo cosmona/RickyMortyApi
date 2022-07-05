@@ -17,8 +17,8 @@ html {
 }
 
 body { 
-  width: 100vw;
-  height: 100vh;
+ /*  width: 100vw;
+  height: 100vh; */
   font-family: 'Kumbh Sans', sans-serif;
   background-color: black;
 /*   background-image: url(../images/pattern3.jpg);
@@ -38,38 +38,43 @@ header img {
 .flex {
   display: flex;
   flex-wrap: wrap;
-  position: relative;
+  position: static;
   justify-content: center;
 }
 
 .card {
   background: #c9949f;
   display: flex;
-  width: 300px;
-  height: 200px;
+  width: 23vw;
+  height: 225px;
   margin-right: 10px;
   margin-bottom: 10px;
   transition: all 0.5s;
   border-radius: 15px;
-  position: relative;
-  
-  box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+  box-shadow: -1px 6px 0px 0px rgb(134 44 149 / 73%), 0 2px 2px 0 rgb(138 21 217 / 87%), 0 1px 5px 0 hsl(185deg 75% 39%);
   flex-direction: column;
   transition: all;
   transition-duration: 2s;
-  
+  min-width: 316px; 
 }
+
 .imagenTitulo{
   display: flex;
   flex-direction: column;
-  text-align: center;
-  align-content: center;
-  flex-wrap: nowrap;
+  /* text-align: center; */
+  /* align-content: center; */
+  /* flex-wrap: nowrap; */
   align-items: center;
 }
 
-.Abre .imagenTitulo{
-  flex-direction: row;
+
+
+.card-body-img {
+  box-shadow: -1px 6px 0px 0px rgb(134 44 149 / 73%), 0 2px 2px 0 rgb(138 21 217 / 87%), 0 1px 5px 0 hsl(185deg 75% 39%);
+  border: 2px solid white;
+  border-radius: 100%;
+  width: 100px;
+  margin: 1rem;
 }
 
 .card-body {
@@ -81,19 +86,19 @@ header img {
   border-bottom: 1px solid rgba(153, 153, 153, 0.425);
 }
 
-.card-body-img {
-  border: 2px solid white;
-  border-radius: 100%;
-  width: 100px;
-  margin: 1rem;
 
+.Abre .imagenTitulo{
+  flex-direction: row;
 }
+
+
 
 h1{
   text-align: center;
   font-weight: 400;
   font-family: 'Fredericka the Great', cursive;
   width: 100%;
+  font-size: 2rem;
 
 }
 
@@ -112,41 +117,49 @@ h1{
 .Abre img {
   width:236px;
 }
+
+.Abre h3{
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 0.8rem;
+
+}
+
+.Abre h3~p{
+  font-size: 1rem;
+  margin: 0px;
+}
 .card-footer{
 display: none;
 }
 
 .Abre .card-footer{
   display: flex;
-    gap: 10px;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: baseline;
-    height: 55%;
+  /* gap: 10px; */
+  flex-direction: column;
+  /* height: 55%; */
+  font-size: 0.6rem;
+  /* margin-top: 4rem; */
+  width: 250px;
+  align-items: flex-start;
 
 }
 .datosTarjeta{
   opacity: 0;
 }
 .Abre .datosTarjeta {
- 
   display: flex;
-    gap: 16rem;
-    flex-direction: row;
-    background-color: white;
-    /* width: 90vw; */
-    margin: 1rem;
-    border-radius: 15px;
-    /* text-align: center; */
-    padding: 3rem;
-    /* height: 90%; */
-    /* flex-wrap: wrap; */
-    /* align-content: flex-start; */
-    /* justify-content: flex-start; */
-    height: 53%;
-    transition: all;
-    transition-duration: 2s;
-    /* align-items: flex-start;*/
+  flex-direction: row;
+  background-color: white;
+  /* width: 90vw; */
+  /* text-align: center; */
+  padding: 3rem;
+  /* height: 90%; */
+  flex-wrap: wrap;
+  height: 47%;
+  transition: all;
+  transition-duration: 2s;
+  
 }
 
 .episodes{
@@ -154,7 +167,7 @@ display: none;
     flex-direction: column;
     align-content: center;
     align-items: flex-start;
-    height: 37%;
+    height: 36%;
         overflow: scroll;
 }
 .episodes::-webkit-scrollbar {
@@ -165,10 +178,68 @@ display: none;
   opacity: 1;
 }
 
+.Abre  h1{
+  font-size: 4rem;
+}
+
 @keyframes aCero {
   0%{}
   100%{
     top:0px;
     left:0px;
   }
+}
+
+@media (max-width: 600px) {
+.imagenTitulo{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}  
+.Abre .card-footer {
+  display: flex;
+  /* gap: 48px; */
+  /* height: 55%; */
+  font-size: 0.6rem;
+  /* margin-top: 4rem; */
+  /* width: 250px; */
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: stretch;
+}
+.Abre h3 {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+.Abre img {
+  width: 144px;
+}
+
+.card {
+  transition: all;
+  transition-duration: 2s;
+  min-width: 300px;
+  padding: 1rem;
+  height: 100vh;
+}
+.Abre .datosTarjeta {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  width: 100vw;
+  /* margin: 1rem; */
+  border-radius: 0;
+  /* text-align: center; */
+  padding: 2rem;
+  /* height: 90%; */
+  flex-wrap: wrap;
+  height: 62%; 
+  transition: all;
+  transition-duration: 2s;
+}
 }
