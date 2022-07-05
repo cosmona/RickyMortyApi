@@ -7,20 +7,34 @@ async function getRickPages(urlApi){
 		let datos = await response.json();
 		return datos.info.pages;
 	} catch (error) {
-		console.log(error)
-	}
-}
+		console.error(error);
+	};
+};
 
 //& devuelve array con 20 personajes 
 async function getRick(urlApi,page){
-	let response = await fetch(urlApi+page);
-	let datos = await response.json();
-	return datos.results	
+	try {
+		let response = await fetch(urlApi+page);
+		let datos = await response.json();
+		return datos.results	
+	} catch (error) {
+		console.error(error);
+	};
 };
+
+async function buscaEpisodio(episodio){
+
+	try {
+		let response = await fetch(`https://rickandmortyapi.com/api/episode/${episodio}`);
+		let datos = await response.json();
+		return datos.characters;	
+	} catch (error) {
+		console.error(error);
+	};
+}
 
 //& devuelve una tarjeta rellena con los datos
 function pintaTarjeta(res,index){
-	console.log('res', res)
 	let episodios;
 	let pizarra = `<article class="card" id="card${res[index].id}"> 
 						<section class="imagenTitulo">
@@ -45,16 +59,17 @@ function pintaTarjeta(res,index){
 							<h3>Episodes</h3>
 							<div class="episodes">
 								`;
-
+	
 	episodios = res[index].episode.map((e)=> e);	
-	console.log('episodios', episodios)
-	episodios.forEach((e)=>{
+	episodios.forEach(async (e)=>{
 		let cadena = e.split("/");
-		console.log('cadena', cadena)
-		pizarra += `<p>${cadena[cadena.length-1]}</p>`;
-		console.log('pizarra', pizarra)
+		pizarra += `<section>${cadena[cadena.length-1]}</section>`;	
+		
+		let personajesEpisodio = await buscaEpisodio(cadena[cadena.length-1]);
+		
 	});
-
+	
+	
 	pizarra += `</div>	
 	</section>			
 	</section>			
@@ -85,15 +100,16 @@ async function main(){
 			this.removeAttribute( 'style');
 			this.classList.remove('Abre');
 			pescador.classList.remove("aparece")
+	
 			//* hace scroll automatico hacia donde estaba la tarjeta
 			window.scrollTo({top: scrollY, behavior: 'smooth'});
-		} else { //* se quiere abrir 
+		} else { //* se quiere abrir una tarjeta
 			
 			//* posicion actual del scroll
 			scrollY = window.scrollY;
 
 			//* recorre todas las .cards y les borra la clase Abre y el style
-			TARJETA.forEach((tarjeta) => {
+			document.querySelectorAll(".card").forEach((tarjeta) => {
 				tarjeta.classList.remove('Abre');
 				tarjeta.removeAttribute('style');
 			});
@@ -121,22 +137,27 @@ async function main(){
 				   this.style.top = `0px`;
 			}, 2000);
 		};
-	};
+	}; //^ fin Handle funcion
+
 
 	//* pinta los primeros 20 personajes
 	for (let index = 0; index < res.length; index++) {
-		if (index === 0) {
+		/* if (index === 0) { //!recortado
 			TITULO.innerHTML = pintaTarjeta(res,index);
 		} else {			
 			TITULO.innerHTML +=  pintaTarjeta(res,index);
-		}
+		} */
+		if (index === 0) TITULO.innerHTML = pintaTarjeta(res,index);
+		else TITULO.innerHTML +=  pintaTarjeta(res,index);
 	}
 
 	//* añade un escuchador (handleFuction) click por cada tarjeta
-	let TARJETA = document.querySelectorAll(".card")
+	/*  let TARJETA = document.querySelectorAll(".card"); //!recortado
 	TARJETA.forEach((tarjeta) => {
 		 tarjeta.addEventListener("click",handleFuction);
-	  });
+    }); */
+	document.querySelectorAll(".card").forEach((tarjeta) => tarjeta.addEventListener("click",handleFuction));
+	 
 	
 	//* Cuando baja el scroll genera 20 tarjetas mas
 	window.addEventListener('scroll', async () => {	
@@ -157,10 +178,11 @@ async function main(){
 			}
 
 			//* añade un escuchador (handleFuction) click por cada tarjeta
-			TARJETA = document.querySelectorAll(".card")
+		/* 	TARJETA = document.querySelectorAll(".card") //!recortado
 			TARJETA.forEach((tarjeta) => {
 				tarjeta.addEventListener("click",handleFuction);
-			});	
+			});	 */
+			document.querySelectorAll(".card").forEach((tarjeta) => tarjeta.addEventListener("click",handleFuction));
 		}
 	}); 
 }
