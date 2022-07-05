@@ -40,7 +40,7 @@ header img {
   .card {
 	background: #c9949f;
     display: flex;
-    height: 225px;
+    height: 260px;
     transition: all 0.5s;
     border-radius: 15px;
     box-shadow: -1px 6px 0px 0px rgb(134 44 149 / 73%), 0 2px 2px 0 rgb(138 21 217 / 87%), 0 1px 5px 0 hsl(185deg 75% 39%);
@@ -95,9 +95,25 @@ h1{
     transition-duration: 2s;
     z-index: 1;
     height: auto;
-    width: 100vw;
+    width: 90vw;
 	margin: 0;
 	box-shadow: none;
+   }
+
+   .card .Abre {
+	background: #c9949f;
+    display: flex;
+    height: 225px;
+    transition: all 0.5s;
+    border-radius: 15px;
+    box-shadow: -1px 6px 0px 0px rgb(134 44 149 / 73%), 0 2px 2px 0 rgb(138 21 217 / 87%), 0 1px 5px 0 hsl(185deg 75% 39%);
+    flex-direction: column;
+    transition: all;
+    transition-duration: 2s;
+    min-width: 316px;
+    margin: 1rem;
+    padding: 1rem auto;
+    align-items: center;
    }
    
   .Abre > .aparece{
@@ -105,10 +121,52 @@ h1{
 	animation: aCero 1s ease-in 1s  both running ; 
 
   }
+
+  .episodes{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap:2rem
+  }
+
+  .episodesCard{
+	background-color: white;
+    border-radius: 15px;
+    padding: 1rem;
+    width: 77vw;
+	margin: 0 auto;
+	transition: all;
+    transition-duration: 2s;
+  }
+  .card-footer{
+	display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
   @keyframes aCero {
 	0%{}
 	100%{
 	  top:0px;
 	  left:0px;
+	}
+  }
+
+  @media (min-width: 600px) {
+	.card{
+		max-width: 400px;
+	}
+	
+	.Abre{
+		min-width: 100vw;
+	}
+	.episodesCard {
+		background-color: white;
+		border-radius: 15px;
+		padding: 1rem;
+		width: 90vw;
 	}
   }

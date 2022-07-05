@@ -49,7 +49,10 @@ function pintaTarjeta(res,index){
 	episodios = res[index].episode.map((e)=> e);	
 	console.log('episodios', episodios)
 	episodios.forEach((e)=>{
-		pizarra += `<p>${e}</p>`;
+		let cadena = e.split("/");
+		console.log('cadena', cadena)
+		pizarra += `<p>${cadena[cadena.length-1]}</p>`;
+		console.log('pizarra', pizarra)
 	});
 
 	pizarra += `</div>	
