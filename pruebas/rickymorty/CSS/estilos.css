@@ -225,20 +225,22 @@ display: none;
   transition-duration: 2s;
   min-width: 300px;
   padding: 1rem;
+  height: auto;
 }
 .Abre .datosTarjeta {
   display: flex;
-  flex-direction: row;
   background-color: white;
   width: 100vw;
   /* margin: 1rem; */
   border-radius: 0;
   /* text-align: center; */
-  padding: 2rem; 
+  padding: 2rem;
   /* height: 90%; */
-  flex-wrap: wrap;
-  height: 62%; 
+  height: 83%;
   transition: all;
   transition-duration: 2s;
+  flex-direction: column;
+  align-content: stretch;
+  flex-wrap: nowrap;
 }
 }

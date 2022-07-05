@@ -25,7 +25,7 @@ function pintaTarjeta(res,index){
 	let pizarra = `<article class="card" id="card${res[index].id}"> 
 						<section class="imagenTitulo">
 							<img src="${res[index].image}" alt="" class="card-body-img">
-							<h1 class="card-body-title">${res[index].name}</h1>
+							<h1>${res[index].name}</h1>
 						</section>			
 						<section class="datosTarjeta">
 							<div class="card-footer">
@@ -47,6 +47,7 @@ function pintaTarjeta(res,index){
 								`;
 
 	episodios = res[index].episode.map((e)=> e);	
+	console.log('episodios', episodios)
 	episodios.forEach((e)=>{
 		pizarra += `<p>${e}</p>`;
 	});
@@ -113,6 +114,8 @@ async function main(){
 				//* pescando .imagenTitulo de la tarjeta clickada
 				let pescador2 = document.querySelector(`.Abre .datosTarjeta`);
 			   	pescador2.classList.add("aparece");
+				   this.style.left = `0px`;
+				   this.style.top = `0px`;
 			}, 2000);
 		};
 	};
