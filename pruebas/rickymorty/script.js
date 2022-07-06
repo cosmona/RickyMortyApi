@@ -22,17 +22,6 @@ async function getRick(urlApi,page){
 	};
 };
 
-async function buscaEpisodio(episodio){
-
-	try {
-		let response = await fetch(`https://rickandmortyapi.com/api/episode/${episodio}`);
-	let datos = await response.json();
-		return datos.characters;	
-	} catch (error) {
-		console.error(error);
-	};
-}
-
 //& devuelve una tarjeta rellena con los datos
 async function pintaTarjeta(res,index){
 	let episodios;
@@ -57,8 +46,7 @@ async function pintaTarjeta(res,index){
 							</div>	
 							<section class="episodesCard">
 							<h3>Episodes</h3>
-							<div class="episodes">
-								`;
+							<div class="episodes">`;
 	
 	//* mete en un array los episodios en el que sale este personaje
 	episodios = res[index].episode.map((e)=> e);	
@@ -69,55 +57,7 @@ async function pintaTarjeta(res,index){
 		pizarra += `<section class="capitulos">${cadena[cadena.length-1]}</section>`;	
 	});
 	
-	
-	pizarra += `</div>	
-	</section>`;
-
-	/* episodios.map(async function (e){
-		try {
-			let cadena = e.split("/");
-			let response = await fetch(`https://rickandmortyapi.com/api/episode/${cadena[cadena.length-1]}`);
-			let datos = await response.json();
-			pizarra += `<section class="personajesCard">`;
-			for (let index = 0; index < datos.characters.length; index++) {
-				console.log(`Capitulo: ${e} , Personaje:${datos.characters[index]}`)
-				let cadena = datos.characters[index].split("/");
-				let numPersonaje = cadena[cadena.length-1];
-				console.log('numPersonaje', numPersonaje);
-				pizarra += await `<div>${numPersonaje}</div>`;
-				console.log('pizarra', pizarra) */
-				/* let ee = datos.characters[index];
-	
-				console.log('numPersonaje', numPersonaje)
-				pizarra += `<div>${numPersonaje}</div>`; */
-	/* 		} 
-			pizarra += `</section>`;						
-		} catch (error) {
-			console.error(error)
-		}
-		 
-	}); */
-	
-	//* fetch que devuelve los personajes de cada episodio
-	
-
-	/* var result = Object.values(await personajes[0]).map((value) => value);
-	console.log('result', result)
-	 */
-	//console.log('result', result["4"][0])
-
-/* 
-https://rickandmortyapi.com/api/character/avatar/
-	console.log('personajes', await personajes[0])
-	await personajes.map(async function(e){
-		
-		
-	}) */
-		
-		
-			
-	/* 	pizarra += `<section class="personajes"></section>`;	
-	*/
+	pizarra += `</div></section>`;
 	
 	//* pinta una tarjeta del array res en la posicion index
 	return pizarra;
@@ -127,34 +67,38 @@ https://rickandmortyapi.com/api/character/avatar/
 async function main(){
 	const URL_RICK = `https://rickandmortyapi.com/api/character/?page=`;
 	const URL_RICK_PAGES = `https://rickandmortyapi.com/api/character/`;
-	const TITULO = document.querySelector(".flex");
+	
+	const TITULO = document.querySelector(".flex"); //~ DOM
 	
 	const PAGINAS = await getRickPages(URL_RICK_PAGES);
 	
 	let paginaCargada = 1;
-	let res = await getRick(URL_RICK,1)
-	let scrollY;
 	
+	//* numero total de paginas en la api
+	let res = await getRick(URL_RICK,1)
+	
+	let scrollY;
+		
 	//^ Handle funcion cuando se hace click en una tarjeta
 	let handleFuction = function () {
 		
-		console.log('this1', this.classList)
-		let pescador = document.querySelector(`.datosTarjeta`);
+		let pescador = document.querySelector(`.datosTarjeta`); //~ DOM
 		
 		//* Si ya esta abierto lo cierra
 		if (this.classList.contains('Abre')) {
 			this.removeAttribute( 'style');
 			this.classList.remove('Abre');
-			pescador.classList.remove("aparece")
+			pescador.classList.remove("aparece");
 	
 			//* hace scroll automatico hacia donde estaba la tarjeta
 			window.scrollTo({top: scrollY, behavior: 'smooth'});
+
 		} else { //* se quiere abrir una tarjeta
 			
 			//* posicion actual del scroll
 			scrollY = window.scrollY;
 			
-			//* recorre todas las .cards y les borra la clase Abre y el style
+			//* recorre todas las .cards y les borra la clase Abre y el style para verrar si habia alguna abierta
 			document.querySelectorAll(".card").forEach((tarjeta) => {
 				tarjeta.classList.remove('Abre');
 				tarjeta.removeAttribute('style');
@@ -175,19 +119,20 @@ async function main(){
 			setTimeout(() => {
 				window.scrollTo({top: 0, behavior: 'smooth'});
 			}, 1100);	
+
+
+			//* desoculta los datos y lo manda a la posicion 0,0
 			setTimeout(() => {
-				//* pescando .imagenTitulo de la tarjeta clickada
 				let pescador2 = document.querySelector(`.Abre .datosTarjeta`);
 			   	pescador2.classList.add("aparece");
 				   this.style.left = `0px`;
 				   this.style.top = `0px`;
 			}, 2000);
 		};
+
 		//* añade un escuchador (handleFuction) click por cada episodio
 		document.querySelectorAll(".capitulos").forEach((tarjeta) => tarjeta.addEventListener("click",async (event)=>{
-			console.log('this', this.classList)
 			try {
-				
 				let response = await fetch(`https://rickandmortyapi.com/api/episode/${event.target.innerHTML}`);
 				let datos = await response.json();
 				const newSection = document.createElement("section");
@@ -201,20 +146,12 @@ async function main(){
 					let cadena = datos.characters[index].split("/");
 					let numPersonaje = cadena[cadena.length-1];
 
-
-					// Agregamos un texto al nuevo "li".
+					//* Agregamos un texto al nuevo " ".
 					newSection.innerHTML += `<img src="https://rickandmortyapi.com/api/character/avatar/${numPersonaje}.jpeg" alt="" class="card-body-img">`;
 
-					// Incorporamos el "li" como último hijo del "ul".
+					//* Incorporamos el "" como último hijo del "".
 					pescador.append(newSection);
-					
-					
-/* 
-					console.log('pescador', pescador)
-					pescador.style.backgroundColor = "red"
-					console.log('numPersonaje', numPersonaje); */
 				} 
-				
 			} catch (error) {
 				console.error(error)
 			}
@@ -224,20 +161,11 @@ async function main(){
 
 	//* pinta los primeros 20 personajes
 	for (let index = 0; index < res.length; index++) {
-		/* if (index === 0) { //!recortado
-			TITULO.innerHTML = pintaTarjeta(res,index);
-		} else {			
-			TITULO.innerHTML +=  pintaTarjeta(res,index);
-		} */
 		if (index === 0) TITULO.innerHTML = await pintaTarjeta(res,index);
 		else TITULO.innerHTML +=  await pintaTarjeta(res,index);
 	}
 
 	//* añade un escuchador (handleFuction) click por cada tarjeta
-	/*  let TARJETA = document.querySelectorAll(".card"); //!recortado
-	TARJETA.forEach((tarjeta) => {
-		 tarjeta.addEventListener("click",handleFuction);
-    }); */
 	document.querySelectorAll(".card").forEach((tarjeta) => tarjeta.addEventListener("click",handleFuction));
 	 
 	
@@ -260,10 +188,6 @@ async function main(){
 			}
 
 			//* añade un escuchador (handleFuction) click por cada tarjeta
-			/* 	TARJETA = document.querySelectorAll(".card") //!recortado
-			TARJETA.forEach((tarjeta) => {
-				tarjeta.addEventListener("click",handleFuction);
-			});	 */
 			document.querySelectorAll(".card").forEach((tarjeta) => tarjeta.addEventListener("click",handleFuction));
 			
 			

@@ -138,6 +138,21 @@ h1{
 	transition: all;
     transition-duration: 2s;
   }
+
+  .personajesCard{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 15px;
+    padding: 1rem;
+    margin: 1rem auto;
+    transition: all;
+    transition-duration: 2s;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 80vw;
+  }
+
   .card-footer{
 	display: flex;
     gap: 0.5rem;
