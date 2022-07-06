@@ -4,3 +4,5 @@ La API de Rick and Morty es una API REST(ish) y GraphQL basada en el programa de
 Consulta la documentación para empezar
 
 https://rickandmortyapi.com/
+
+https://inakipfrickymorty.netlify.app/pruebas/rickymorty/
