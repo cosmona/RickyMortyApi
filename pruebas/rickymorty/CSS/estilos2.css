@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Fredericka+the+Great&display=swap');
+
 :root {
   --color1:#b38474;
   --color2:#48b8bb;
@@ -7,7 +8,6 @@
   --color5:#C9949F;
   --color6:#ffffff;
   --color7:#c9949fad;
-
 }
 
 *{
@@ -17,17 +17,16 @@
 
 html {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+   box-sizing: border-box;
 }
 
 body { 
   font-family: 'Kumbh Sans', sans-serif;
   background-color: black; 
-
 }
-main{
-  background-image: url("../images/587530-Cartoon-Rick.jpg");
-  
+
+main {
+  background-image: url(../images/587530-Cartoon-Rick.jpg);
 }
 
 header {
@@ -43,81 +42,79 @@ header img {
 	flex-wrap: wrap;
 	position: static;
 	justify-content: center;
-  }
+}
 
-  .card {
-    background: var(--color7);
-    display: flex;
-    height: 260px;
-    transition: all 0.5s;
-    border-radius: 15px;
-    box-shadow: -4px -1px 19px 1px hsl(182deg 46% 51%), 2px 4px 5px 1px rgb(113 51 155 / 87%), 6px -7px 9px 2px hsl(234deg 84% 39%);
-    flex-direction: column;
-    transition: all;
-    transition-duration: 2s;
-    min-width: 316px;
-    margin: 1rem;
-    padding: 1rem;
-    border: 3px solid var(--color2);
-    color: var(--color6);
+.card {
+  background: var(--color7);
+  display: flex;
+  height: 260px;
+  transition: all 0.5s;
+  border-radius: 15px;
+  box-shadow: -4px -1px 19px 1px hsl(182deg 46% 51%), 2px 4px 5px 1px rgb(113 51 155 / 87%), 6px -7px 9px 2px hsl(234deg 84% 39%);
+  flex-direction: column;
+  transition: all;
+  transition-duration: 2s;
+  min-width: 316px;
+  margin: 1rem;
+  padding: 1rem;
+  border: 3px solid var(--color2);
+  color: var(--color6);
 }
   
-  
-
-.imagenTitulo{
+.imagenTitulo {
+  text-align: center;
+    align-items: center;
     /* display: flex; */
     /* flex-direction: column; */
-    text-align: center;
     /* align-content: center; */
     /* flex-wrap: nowrap; */
-    align-items: center;
 }
 
 
-h1{
-    /* text-align: center; */
-    font-weight: 400;
-    font-family: 'Fredericka the Great', cursive;
-    /* width: 100%; */
-    font-size: 2.6rem;
+h1 {
+  font-weight: 400;
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 2.6rem;
 	padding: 1rem;
   text-shadow: 6px 3px 2px hsl(182deg 52% 13%);
+  /* width: 100%; */
+  /* text-align: center; */
 }
   
-  
-  
-  .card-body-img {
-    box-shadow: inset -10px -13px 11px 5px hsl(182deg 46% 51%), 0px 0px 17px 7px rgb(0 0 0 / 58%), 0 1px 5px 0 var(--color4);
-    border: 2px solid white;
-    border-radius: 50%;
-    width: 119px;
-    margin: 1rem;
-  }
-  .datosTarjeta{
+.card-body-img {
+  box-shadow: inset -10px -13px 11px 5px hsl(182deg 46% 51%), 0px 0px 17px 7px rgb(0 0 0 / 58%), 0 1px 5px 0 var(--color4);
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 119px;
+  margin: 1rem;
+}
+
+.datosTarjeta {
 	opacity: 0;
 	z-index: -1;
-  }
-
-  .Abre{
-    background: var(--color2);
-    animation: aCero 1s ease-in 1s both running;
-    border-radius: 0px;
-    transition: all;
-    transition-duration: 2s;
-    z-index: 1;
-    height: auto;
-    width: 95vw;
-    margin: 0;
-    box-shadow: none;
-    padding: 0rem;
-   }
-
-   .Abre .imagenTitulo {
-    display: flex;
-    text-align: center;
-    flex-wrap: wrap;
-    flex-direction: column;
 }
+
+.Abre {
+  background: var(--color2);
+  animation: aCero 1s ease-in 1s both running;
+  border-radius: 0px;
+  transition: all;
+  transition-duration: 2s;
+  z-index: 1;
+  height: auto;
+  width: 95vw;
+  margin: 0;
+  box-shadow: none;
+  padding: 0rem;
+}
+
+.Abre .imagenTitulo {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
 .Abre .card-body-img {
   box-shadow: inset -10px -13px 11px 5px hsl(182deg 46% 51%), 0px 0px 17px 7px rgb(0 0 0 / 58%), 0 1px 5px 0 var(--color4);
   border: 2px solid white;
@@ -125,146 +122,173 @@ h1{
   width: 200px;
   margin: 1rem;
 }
+
 .Abre h1 {
-  /* text-align: center; */
   font-weight: 400;
   font-family: 'Fredericka the Great', cursive;
-  /* width: 100%; */
   font-size: 4.6rem;
   padding: 0rem;
   text-shadow: 6px 3px 2px hsl(182deg 52% 13%);
+  transition: all;
+  transition-duration: 2s;
+  /* width: 100%; */
+  /* text-align: center; */
 }
-   .card .Abre {
+
+.card .Abre {
 	background: #c9949f;
-    display: flex;
-    height: 225px;
-    transition: all 0.5s;
-    border-radius: 15px;
-    box-shadow: -1px 6px 0px 0px rgb(134 44 149 / 73%), 0 2px 2px 0 rgb(138 21 217 / 87%), 0 1px 5px 0 hsl(185deg 75% 39%);
-    flex-direction: column;
-    transition: all;
-    transition-duration: 2s;
-    min-width: 316px;
-    margin: 1rem;
-    padding: 1rem auto;
-    align-items: center;
-   }
+  display: flex;
+  height: 225px;
+  transition: all 0.5s;
+  border-radius: 15px;
+  box-shadow: -1px 6px 0px 0px rgb(134 44 149 / 73%), 0 2px 2px 0 rgb(138 21 217 / 87%), 0 1px 5px 0 hsl(185deg 75% 39%);
+  flex-direction: column;
+  min-width: 316px;
+  margin: 1rem;
+  padding: 1rem auto;
+  align-items: center;
+  transition: all;
+  transition-duration: 2s;
+}
    
-  .Abre > .aparece{
-	opacity: 1;
+.Abre > .aparece {
+  opacity: 1;
 	animation: aCero 1s ease-in 1s  both running ; 
 	transition: all;
-		transition-duration: 2s;
-  }
+	transition-duration: 2s;
+}
 
-  .episodes{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 1rem;
-    justify-content: flex-start;
-    text-align: center;
-    margin: 0 0 0 2.4rem;
-    padding: 0;
+.episodes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1rem;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+  /* margin: 0 0 0 2.4rem; */
+  transition: all;
+  transition-duration: 2s;
 }
   
 
-  .episodesCard{
-    background-color: white;
-    border-radius: 15px;
-    padding: 1rem;
-    box-shadow: -3px 3px 19px 1px hsl(217deg 19% 23%);
-    margin: 1rem;
-    transition: all;
-    transition-duration: 2s;
-  }
-  .episodesCard h3{
-    color: black;
-    text-align: center;
-    margin-bottom: 1rem;
-    text-shadow: none;
-    font-size: 1.4rem;
- }
-  .capitulos{
-    background-color: var(--color2);
-    padding: 0.5rem;
-    border-radius: 100%;
-    height: 2rem;
-    width: 2rem;
-    text-align: center;
-    font-size: 1.6rem;
-    border: 0.2rem solid;
-    cursor: pointer;
-    text-shadow: -3px 4px 4px hsl(217deg 18% 21%);
-    box-shadow: inset 0px 2px 7px 0px var(--color3);
-  }
+.episodesCard {
+  background-color: white;
+  border-radius: 15px;
+  padding: 1rem;
+  box-shadow: -3px 3px 19px 1px hsl(217deg 19% 23%);
+  margin: 1rem;
+  transition: all;
+  transition-duration: 2s;
+}
 
-  .capitulos:hover{
-    background-color: #f49a0a;
-   
-  }
+.episodesCard h3 {
+  color: black;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: none;
+  font-size: 1.4rem;
+  transition: all;
+  transition-duration: 2s;
+}
 
-  .personajesCard{
-    display: flex;
-    flex-direction: row;
-    background-color: white;
-    border-radius: 15px;
-    padding: 1rem;
-    margin: 1rem;
-    transition: all;
-    transition-duration: 2s;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    /* width: 80vw; */
-    box-shadow: -3px 3px 19px 1px hsl(217deg 19% 23%);
-  }
+.capitulos {
+  background-color: var(--color2);
+  padding: 0.5rem;
+  border-radius: 100%;
+  height: 2rem;
+  width: 2rem;
+  text-align: center;
+  font-size: 1.6rem;
+  border: 0.2rem solid;
+  cursor: pointer;
+  text-shadow: -3px 4px 4px hsl(217deg 18% 21%);
+  box-shadow: inset 0px 2px 7px 0px var(--color3);
+  transition: all;
+  transition-duration: 2s;
+}
 
-  .datosTarjeta .personajesCard img{
-    width: 81px;
-    border-radius: 100%;  
-    transition: all;
-    transition-duration: 2s;
-  }
-  .card-footer{
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: nowrap;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    flex-direction: column;
-    align-items: center;
-    font-size: 2rem;
+.capitulos:hover {
+  background-color: #f49a0a; 
+  transition: all;
+  transition-duration: 2s;
+}
 
-    
-  }
+.personajesCard {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 15px;
+  padding: 1rem;
+  margin: 1rem;
+  transition: all;
+  transition-duration: 2s;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  box-shadow: -3px 3px 19px 1px hsl(217deg 19% 23%);
+  /* width: 80vw; */
+  transition: all;
+  transition-duration: 2s;
+}
 
-  h3{
+.datosTarjeta .personajesCard img {
+  width: 81px;
+  border-radius: 100%;  
+  transition: all;
+  transition-duration: 2s;
+  transition: all;
+  transition-duration: 2s;
+}
+
+.card-footer {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;    
+  transition: all;
+  transition-duration: 2s;
+}
+
+h3 {
     color: var(--color4);
     text-shadow: 6px 3px 8px hsl(0deg 0% 0%);
-  }
-  .card-footer p {
-    color: var(--color6);
-    text-shadow: 6px 3px 14px var(--color4);
-  }
+}
 
-  @keyframes aCero {
+.card-footer p {
+  color: var(--color6);
+  text-shadow: 6px 3px 14px var(--color4);
+}
+
+@keyframes aCero {
 	0%{}
 	100%{
 	  top:0px;
 	  left:0px;
+    transition: all;
+    transition-duration: 2s;
 	}
-  }
+}
 
-  @media (min-width: 600px) {
-	.card{
+@media (min-width: 600px) {
+
+  .card {
 		max-width: 400px;
+    transition: all;
+    transition-duration: 2s;
 	}
 	
-	.Abre{
+	.Abre {
 		min-width: 100vw;
+    transition: all;
+    transition-duration: 2s;
 	}
-	.Abre  .personajesCard {
+
+  .Abre  .personajesCard {
 		background-color: white;
 		border-radius: 15px;
 		padding: 1rem;
@@ -272,19 +296,33 @@ h1{
 		transition: all;
 		transition-duration: 2s;
 		width: 80vw;
-
 	}
 
   .Abre  .episodesCard {
 		background-color: white;
 		border-radius: 15px;
 		padding: 1rem;
-		margin: 1rem auto;
+		margin: 3rem auto;
 		transition: all;
 		transition-duration: 2s;
 		width: 80vw;
-
+    height: 8vh;
+    overflow: hidden;
 	}
+
+
+  .Abre  .episodesCard:hover {
+		background-color: white;
+		border-radius: 15px;
+		padding: 1rem;
+		margin: 3rem auto;
+		transition: all;
+		transition-duration: 2s;
+		width: 80vw;
+    height: 100%;
+    overflow: hidden;
+	}
+
   .card-footer {
     display: flex;
     gap: 0.5rem;
@@ -295,5 +333,7 @@ h1{
     align-items: center;
     font-size: 2rem;
     justify-content: space-evenly;
-}
+    transition: all;
+    transition-duration: 2s;
   }
+}

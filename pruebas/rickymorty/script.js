@@ -32,10 +32,8 @@ async function pintaTarjeta(res,index){
 						</section>			
 						<section class="datosTarjeta">
 							<div class="card-footer">
-							<h3>Specie</h3>
-							<p>${res[index].species}</p>
-							
-							<h3>Characters</h3>
+								<h3>Specie</h3>
+								<p>${res[index].species}</p>
 								<h3>Origin</h3>
 								<p>${res[index].origin.name}</p>
 								
@@ -139,6 +137,7 @@ async function main(){
 				let datos = await response.json();
 				const newSection = document.createElement("section");
 				newSection.classList.add("personajesCard")
+				newSection.innerHTML += '<section class="characters">';
 				let pescador = document.querySelector(`#${this.id} .datosTarjeta`);
 				let pescador2 = document.querySelector(".personajesCard")
 				if (pescador2 != null){
@@ -155,6 +154,7 @@ async function main(){
 					pescador.append(newSection);
 					
 				} 
+				newSection.innerHTML += `</section>`;
 			} catch (error) {
 				console.error(error)
 			}
