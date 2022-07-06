@@ -32,9 +32,10 @@ async function pintaTarjeta(res,index){
 						</section>			
 						<section class="datosTarjeta">
 							<div class="card-footer">
-								<h3>Specie</h3>
-								<p>${res[index].species}</p>
-								
+							<h3>Specie</h3>
+							<p>${res[index].species}</p>
+							
+							<h3>Characters</h3>
 								<h3>Origin</h3>
 								<p>${res[index].origin.name}</p>
 								
