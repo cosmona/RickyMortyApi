@@ -83,7 +83,7 @@ async function main(){
 	let handleFuction = function () {
 		
 		let pescador = document.querySelector(`.datosTarjeta`); //~ DOM
-		
+		console.log(this)
 		//* Si ya esta abierto lo cierra
 		if (this.classList.contains('Abre')) {
 			this.removeAttribute( 'style');
@@ -133,6 +133,7 @@ async function main(){
 		//* añade un escuchador (handleFuction) click por cada episodio
 		document.querySelectorAll(".capitulos").forEach((tarjeta) => tarjeta.addEventListener("click",async (event)=>{
 			try {
+				event.stopPropagation();
 				let response = await fetch(`https://rickandmortyapi.com/api/episode/${event.target.innerHTML}`);
 				let datos = await response.json();
 				const newSection = document.createElement("section");
@@ -151,6 +152,7 @@ async function main(){
 
 					//* Incorporamos el "" como último hijo del "".
 					pescador.append(newSection);
+					
 				} 
 			} catch (error) {
 				console.error(error)
