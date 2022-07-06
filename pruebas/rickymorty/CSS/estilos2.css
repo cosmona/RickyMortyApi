@@ -306,10 +306,8 @@ h3 {
 		transition: all;
 		transition-duration: 2s;
 		width: 80vw;
-    height: 8vh;
-    overflow: hidden;
 	}
-
+ 
 
   .Abre  .episodesCard:hover {
 		background-color: white;
@@ -319,9 +317,8 @@ h3 {
 		transition: all;
 		transition-duration: 2s;
 		width: 80vw;
-    height: 100%;
     overflow: hidden;
-	}
+	} 
 
   .card-footer {
     display: flex;
