@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Fredericka+the+Great&display=swap');
 :root {
-  --dark-cyan: hsl(185, 75%, 39%);
-  --very-dark-desaturated: hsl(229, 23%, 23%);
-  --dark-grayish-blue: hsl(227, 10%, 46%);
-  --dark-gray: hsl(0, 0%, 0%);
+  --color1:#b38474;
+  --color2:#48b8bb;
+  --color3:#8999b2;
+  --color4:#de763b;
+  --color5:#C9949F;
+  --color6:#ffffff;
+  --color7:#c9949fad;
+
 }
 
 *{
@@ -18,9 +22,13 @@ html {
 
 body { 
   font-family: 'Kumbh Sans', sans-serif;
-  background-color: black;
-}
+  background-color: black; 
 
+}
+main{
+  background-image: url("https://rare-gallery.com/uploads/posts/587530-Cartoon-Rick.jpg");
+  
+}
 
 header {
 	text-align: center;
@@ -38,18 +46,20 @@ header img {
   }
 
   .card {
-	background: #c9949f;
+    background: var(--color7);
     display: flex;
     height: 260px;
     transition: all 0.5s;
     border-radius: 15px;
-    box-shadow: -1px 6px 0px 0px rgb(134 44 149 / 73%), 0 2px 2px 0 rgb(138 21 217 / 87%), 0 1px 5px 0 hsl(185deg 75% 39%);
+    box-shadow: -4px -1px 19px 1px hsl(182deg 46% 51%), 2px 4px 5px 1px rgb(113 51 155 / 87%), 6px -7px 9px 2px hsl(234deg 84% 39%);
     flex-direction: column;
     transition: all;
     transition-duration: 2s;
     min-width: 316px;
     margin: 1rem;
-	padding: 1rem;
+    padding: 1rem;
+    border: 3px solid var(--color2);
+    color: var(--color6);
 }
   
   
@@ -71,16 +81,17 @@ h1{
     /* width: 100%; */
     font-size: 2.6rem;
 	padding: 1rem;
+  text-shadow: 6px 3px 2px hsl(182deg 52% 13%);
 }
   
   
   
   .card-body-img {
-	box-shadow: -1px 6px 0px 0px rgb(134 44 149 / 73%), 0 2px 2px 0 rgb(138 21 217 / 87%), 0 1px 5px 0 hsl(185deg 75% 39%);
-	border: 2px solid white;
-	border-radius: 100%;
-	width: 100px;
-	margin: 1rem;
+    box-shadow: inset -10px -13px 11px 5px hsl(182deg 46% 51%), 0px 0px 17px 7px rgb(0 0 0 / 58%), 0 1px 5px 0 var(--color4);
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 119px;
+    margin: 1rem;
   }
   .datosTarjeta{
 	opacity: 0;
@@ -88,7 +99,7 @@ h1{
   }
 
   .Abre{
-    background: #48b8bbf5;
+    background: var(--color2);
     animation: aCero 1s ease-in 1s both running;
     border-radius: 0px;
     transition: all;
@@ -100,6 +111,28 @@ h1{
 	box-shadow: none;
    }
 
+   .Abre .imagenTitulo {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.Abre .card-body-img {
+  box-shadow: inset -10px -13px 11px 5px hsl(182deg 46% 51%), 0px 0px 17px 7px rgb(0 0 0 / 58%), 0 1px 5px 0 var(--color4);
+  border: 2px solid white;
+  border-radius: 35px;
+  width: 200px;
+  margin: 1rem;
+}
+.Abre h1 {
+  /* text-align: center; */
+  font-weight: 400;
+  font-family: 'Fredericka the Great', cursive;
+  /* width: 100%; */
+  font-size: 4.6rem;
+  padding: 0rem;
+  text-shadow: 6px 3px 2px hsl(182deg 52% 13%);
+}
    .card .Abre {
 	background: #c9949f;
     display: flex;
@@ -171,13 +204,23 @@ h1{
   }
 
   .card-footer{
-	display: flex;
+    display: flex;
     gap: 0.5rem;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-	padding: 3rem;
+    flex-wrap: nowrap;
+    padding: 1rem;
     margin-bottom: 1rem;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+  }
+
+  h3{
+    color: var(--color4);
+    text-shadow: 6px 3px 8px hsl(0deg 0% 0%);
+  }
+  .card-footer p {
+    color: var(--color6);
+    text-shadow: 6px 3px 14px var(--color4);
   }
 
   @keyframes aCero {
@@ -205,4 +248,15 @@ h1{
 		transition-duration: 2s;
 		width: 80vw;
 	}
+  .card-footer {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    flex-direction: row;
+    align-items: center;
+    font-size: 2rem;
+    justify-content: space-evenly;
+}
   }
