@@ -307,18 +307,6 @@ h3 {
 		transition-duration: 2s;
 		width: 80vw;
 	}
- 
-
-  .Abre  .episodesCard:hover {
-		background-color: white;
-		border-radius: 15px;
-		padding: 1rem;
-		margin: 3rem auto;
-		transition: all;
-		transition-duration: 2s;
-		width: 80vw;
-    overflow: hidden;
-	} 
 
   .card-footer {
     display: flex;
