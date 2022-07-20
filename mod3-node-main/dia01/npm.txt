@@ -1,0 +1,114 @@
+Registro global donde se publican los modulos:
+    npmjs.com
+
+Inicializar repositorio npm:    
+    npm init -y
+    o
+    npm init
+
+Donde node busca los modulos instalados:
+    console.log(module.paths);
+
+Installo modulo cowsay:
+    npm install cowsay 
+    o 
+    npm i cowsay
+
+Uso modulo cowsay:
+    const cowsay = require("cowsay");
+    console.log(cowsay.say({ text: "Hola gente" }));
+
+Script cowsay:
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "saluda": "cowsay 'Hola desde package.json'"
+    },
+    Terminal:
+    npm run saluda 
+
+
+Disinstallar cowsay:
+    npm uninstall cowsay 
+    o 
+    eliminar dependencia en package.json y carpeta toda la carpeta node_modules
+    y ejecutar npm install para reinstallar solo lo que está en las dependencias de package.json
+
+
+No subir nunca node_modules en gitlab o github:
+    .gitignore:
+        node_modules/
+
+Si elimino carpeta, para installar dependencias uso:
+    npm install
+
+DEPENDENCIA DE DESARROLLO:
+
+    npm i eslint --save-dev 
+    o
+    npm i eslint -D
+
+    npm install prettier -D
+
+    Instalo extensiones eslint y prettier en Visual Studio Code 
+
+    Configuro ESLINT con:
+        npx eslint --init
+
+    Configuro PRETTIER con:
+        ctrl+shift+p --> format document o format document with o dar formato al documento --> seleciono prettier
+        Ejecuto prettier:
+            ctrl+shift+i
+        Prettier al guardar el archivo:
+            Preferencias Visual Studio Code --> Configuracion --> Habilitar "format on save"
+
+EJEMPLO .eslintrc.json:
+    {
+    "env": {
+        "node": true,
+        "commonjs": true,
+        "es2021": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "no-unused-vars": ["error", { "argsIgnorePattern": "next" }]
+    }
+    }
+
+EJEMPLO .prettierrc.json
+    {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true
+    }
+
+PARA instalar solo dep prod o dev
+    npm install --only=prod
+    npm install --only=dev
+
+Listado dependencias:
+    npm ls --depth=0
+    npm ls -g
+
+DOTENV:
+    npm install dotenv
+    
+    const dotenv = require("dotenv");
+    dotenv.config();
+    o
+    require("dotenv").config();
+
+
+NODEMON:
+    npm i nodemon -D
+    Añado script:
+        "dev": "nodemon app.js"
+    Ejecuto:
+        npm run dev
+
+
+DEPENDENCIA GLOBAL
+    npm i -g <nombre_modulo>

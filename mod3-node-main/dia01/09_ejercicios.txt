@@ -1,0 +1,17 @@
+### Ejercicio 1
+* Crea un módulo `index` que simplemente muestre por pantalla la primera palabra que se le pasa como primer argumento cuando se ejecuta 
+* este módulo desde bash.
+
+### Ejercicio 2
+* Crea un módulo `simple-maths` que exponga una función `double(x)`, que calcula el doble de un número que se le pasa como argumento.
+* Crea otro módulo `index` que hace uso del anterior. Este módulo usará como entrada el primer argumento que se le pasa a la ejecución del módulo, 
+* y se lo pasará al módulo `simple-maths`, quien calculará el doble del número, e `index` se encargará de imprimir el resultado por pantalla.
+* **Pista 1**: los valores almacenados en `argv` son siempre considerados *strings*, por lo que deberemos hacer la conversión a número con `Number(x)`.
+
+### Ejercicio 3
+* Modifica el ejercicio anterior para que cuando el argumento que le llega a la función `double(x)` del módulo `simple-maths` no sea un número, 
+* se tire un error.
+* Modifica el módulo `index` para capturar el error y mostrarle al usuario el mensaje `El argumento debe ser un número` por pantalla.
+* **Pista 1**: Hay varias formas de comprobar si una variable contiene un número en JS, las más fáciles de usar son usar `Number.isFinite(x)` 
+* o `Number.isNaN(x)`.
+* **Pista 2**: puedes usar `throw new Error()` para tirar un error, y un bloque `try-catch` para capturarlo.

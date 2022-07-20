@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "664b8f32-79ad-4daf-90dc-abe0868a7149",
+		"name": "dia04",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "pruebaserver01",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "superSecreto",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "home",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "superSecreto",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEntries",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "superSecreto",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/entries",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"entries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "newEntry",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "superSecreto",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/entries",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"entries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NotFound",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "superSecreto",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/algo",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"algo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteEntry",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "superSecreto",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/entries/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"entries",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modifyEntry",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "superSecreto",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/entries/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"entries",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

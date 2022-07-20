@@ -1,0 +1,22 @@
+{
+  "name": "01_entornonode",
+  "version": "1.0.0",
+  "description": "Node.js was written initially by Ryan Dahl in 2009",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "saluda": "cowsay 'Hola desde package.json'",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cowsay": "^1.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "nodemon": "^2.0.19",
+    "prettier": "^2.7.1"
+  }
+}
